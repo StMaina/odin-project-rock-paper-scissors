@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getComputerChoice(){const randomNumber=Math.random() ; if (randomNumber<=0.33)return "rock";
+            else if (randomNumber <= 0.66) return "paper";
+            else if (randomNumber < 1) return "scissors";
+        }
+        console.log(getComputerChoice());
+
+        function getHumanChoice(){let humanchoice=prompt("rock,paper or scissors?");
+            if (humanchoice=="rock") return "rock";
+            else if (humanchoice== "paper") return "paper";
+            else if (humanchoice == "scissors") return "scissors";
+           
+        }
+        console.log(getHumanChoice());
+
+        let humanScore=0;
+        let computerScore=0;
+
+        function playRound(humanChoice, computerChoice){if(humanChoice==computerChoice) return "Its a draw";
+       else if (humanChoice=="rock"&&computerChoice=="scissors"||
+        humanChoice=="paper" && computerChoice=="rock"||
+        humanChoice=="scissors" && computerChoice=="paper"){ humanScore++; return "You win!";}
+        else {computerScore++; return "You lose!"};
+        }
+        console.log(playRound(getHumanChoice(), getComputerChoice()));
+
+       
+         
+    
+        
+          
+    </script>
+</body>
+</html>
